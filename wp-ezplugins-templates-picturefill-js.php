@@ -36,27 +36,52 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
 	
 	  $arr_options_images = array(
 	  
-	    'thumb'		=> array(
+	    'w600'		=> array(
 		  'active'		=> true,
-		  'name'		=> 'thumbnail',
+		  'name'		=> 'w600',
 		  'bp'			=> 'w',					// bp = break point. 'w' will defaults to the image's set width, else specify your own bp int. 
 		  ),
 		  
-	    'med'		=> array(
+	    'w750'		=> array(
 		  'active'		=> true,
-		  'name'		=> 'medium',
-		  'bp'			=> 'w'
+		  'name'		=> 'w750',
+		  'bp'			=> 768
 		  ),	
 
-	    'lrg'		=> array(
+	    'w970'		=> array(
 		  'active'		=> true,
-		  'name'		=> 'large',
+		  'name'		=> 'w970',
+		  'bp'			=> 992
+		  ),
+
+	    'w1170o'	=> array(
+		  'active'		=> true,
+		  'name'		=> 'w1170o',
+		  'bp'			=> 1200
+		  ),	
+
+	    'w1920'		=> array(
+		  'active'		=> true,
+		  'name'		=> 'w1920',
 		  'bp'			=> 'w'
 		  ),		  
 	  );
 	  
 	  return $arr_options_images;
 	}
+	
+	/**
+	 * TODO = finalize these settings
+	 */ 
+	public function options_media_query(){
+	
+	  $arr_options_mq = array(
+
+	    'a'		=> '(min-width: 600px) 100vw, (min-width: 768px) 100vw, (min-width: 992px) 100vw, (min-width: 1200px) 100vw, (min-width: 1500px) 100vw',
+	  );
+	  
+	  return $arr_options_mq;
+	}	
 	
 	/**
 	 * A slight bit of fakin' some static funk. 
