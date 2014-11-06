@@ -34,6 +34,28 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
   
   	public function options_images(){
 	
+	  /**
+	   * Using the BoilerStrap theme architecture? and its add_image_size()? And defining your picturefill stuff there? Then if so, use this :)
+	   */
+	  if (false){
+	  
+	    $obj_ais = new Class_WP_ezBoilerStrap_Add_Image_Size();
+	    $arr_ais = $obj_ais->ezbs_add_image_size_args();
+	
+	    $arr_options_images = array();
+	    foreach ( $arr_ais as $str_key => $arr_val ){
+	      if ( isset($arr_val['picturefill']['active']) && isset($arr_val['name']) && isset($arr_val['picturefill']['bp']) ){
+		    $arr_options_images[$str_key] = array(
+		      'active' 	=> $arr_val['picturefill']['active'],
+		      'name'		=> $arr_val['name'],
+		      'bp'		=> $arr_val['picturefill']['bp'],
+			  );
+		  }
+	    }
+	    return  $arr_options_images;	
+	  }
+	 
+	
 	  $arr_options_images = array(
 	  
 	    'w600'		=> array(
@@ -105,13 +127,17 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
 $obj_new_init_picturefill_js = Class_WP_ezPlugins_Templates_Picturefill_js::ezc_get_instance();
 
 /**
- * This is an example of how you can use the static method: go_pf()
+ * This bit below is an example of how you can use the static method: do_pf()
  *
  * Note: You can pass a third element in the array to specify the options_media_query() you wish to use for a particular (non the_content()) image.
  *
+ 
+<code>
+
 class_alias('Class_WP_ezPlugins_Templates_Picturefill_js', 'WPezPicturefill');
 
 $x = array('<img width="1900" height="600" class="alignnone size-full wp-image-724" alt="astro-1900x600" src="http://wpez.dev/wp-content/uploads/2014/03/astro-1900x600.jpg">', 724, 'a');
 echo WPezPicturefill::do_pf($x);
 
+</code>
 */
