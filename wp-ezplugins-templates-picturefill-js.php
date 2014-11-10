@@ -99,7 +99,7 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
 	
 	  $arr_options_mq = array(
 
-	    'a'		=> '(min-width: 600px) 100vw, (min-width: 768px) 100vw, (min-width: 992px) 100vw, (min-width: 1200px) 100vw, (min-width: 1500px) 100vw',
+	    'a'		=> '(min-width: 1500px) 100vw, (min-width: 1200px) 100vw, (min-width: 992px) 100vw, (min-width: 768px) 100vw, (min-width: 600px) 100vw, 100vw',
 	  );
 	  
 	  return $arr_options_mq;
