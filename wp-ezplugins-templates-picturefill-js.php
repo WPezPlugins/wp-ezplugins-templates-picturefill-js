@@ -46,9 +46,9 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
 	    foreach ( $arr_ais as $str_key => $arr_val ){
 	      if ( isset($arr_val['picturefill']['active']) && isset($arr_val['name']) && isset($arr_val['picturefill']['bp']) ){
 		    $arr_options_images[$str_key] = array(
-		      'active' 	=> $arr_val['picturefill']['active'],
+		      'active' 		=> $arr_val['picturefill']['active'],
 		      'name'		=> $arr_val['name'],
-		      'bp'		=> $arr_val['picturefill']['bp'],
+		      'w'			=> $arr_val['picturefill']['w'],
 			  );
 		  }
 	    }
@@ -61,31 +61,31 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
 	    'w600'		=> array(
 		  'active'		=> true,
 		  'name'		=> 'w600',
-		  'bp'			=> 'w',					// bp = break point. 'w' will defaults to the image's set width, else specify your own bp int. 
+		  'w'			=> 'w',					// w = width. value 'w' will defaults to the image's set width, else specify your own int for the width. 
 		  ),
 		  
 	    'w750'		=> array(
 		  'active'		=> true,
 		  'name'		=> 'w750',
-		  'bp'			=> 768
+		  'w'			=> 'w'
 		  ),	
 
 	    'w970'		=> array(
 		  'active'		=> true,
 		  'name'		=> 'w970',
-		  'bp'			=> 992
+		  'w'			=> 970					// the int here is just an example. there's no other reason for an int being use for this one.  
 		  ),
 
 	    'w1170o'	=> array(
 		  'active'		=> true,
 		  'name'		=> 'w1170o',
-		  'bp'			=> 1200
+		  'w'			=> 'w'
 		  ),	
 
 	    'w1920'		=> array(
 		  'active'		=> true,
 		  'name'		=> 'w1920',
-		  'bp'			=> 'w'
+		  'w'			=> 'w'
 		  ),		  
 	  );
 	  
