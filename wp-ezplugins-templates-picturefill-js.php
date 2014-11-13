@@ -11,8 +11,26 @@
 
 /*
  * == Change Log == 
+ * 
+ * -- 13 Nov 2014 - Re-aligned with parent class's refactor. 
  *
- * --- Fri 10 Oct 2014 - Ready!
+ * -- 10 Oct 2014 - Ready!
+ */
+ 
+/**
+ * == References == 
+ * 
+ * - ChrisB: http://elf02.de/2014/07/14/respimage-wordpress-plugin/
+ *
+ * - Scott Jehl: http://scottjehl.github.io/picturefill/
+ *
+ * - http://scottjehl.github.io/picturefill/
+ *
+ * - http://alistapart.com/article/responsive-images-in-practice
+ *
+ * - https://html.spec.whatwg.org/multipage/embedded-content.html
+ * 
+ * - http://ericportis.com/posts/2014/srcset-sizes/
  */
  
 /**
@@ -54,8 +72,10 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
 	    }
 	    return  $arr_options_images;	
 	  }
-	 
-	
+	  
+	  /**
+	   * OR do the images args "manually"
+	   */
 	  $arr_options_images = array(
 	  
 	    'w600'		=> array(
