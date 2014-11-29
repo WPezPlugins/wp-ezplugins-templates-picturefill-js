@@ -11,10 +11,15 @@
 
 /*
  * == Change Log == 
- * 
- * -- 13 Nov 2014 - Re-aligned with parent class's refactor. 
  *
- * -- 10 Oct 2014 - Ready!
+ * == 29 Nov 2014 ==
+ * --- changed: now using ez_new()
+ * 
+ * == 13 Nov 2014 ==
+ * --- changed: Re-aligned with parent class's refactor. 
+ *
+ * == 10 Oct 2014 ==
+ * --- Ready!
  */
  
 /**
@@ -135,7 +140,7 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
 	   }
 	   
 	   if ( self::$obj_static_instance === NULL ) {
-	     self::$obj_static_instance = Class_WP_ezPlugins_Templates_Picturefill_js::ezc_get_instance();
+	     self::$obj_static_instance = Class_WP_ezPlugins_Templates_Picturefill_js::ez_new();
        }
 	   
 	   return self::$obj_static_instance->insert_picturefill_args($arr_0_img_markup_1_id);	 
@@ -144,7 +149,7 @@ if ( ! class_exists('Class_WP_ezPlugins_Templates_Picturefill_js') ) {
   }
 }
 
-$obj_new_init_picturefill_js = Class_WP_ezPlugins_Templates_Picturefill_js::ezc_get_instance();
+$obj_new_init_picturefill_js = Class_WP_ezPlugins_Templates_Picturefill_js::ez_new();
 
 /**
  * This bit below is an example of how you can use the static method: do_pf()
